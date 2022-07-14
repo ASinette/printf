@@ -1,61 +1,27 @@
-nclude "main.h"
+#include <unistd.h>
+
+
 
 /**
  *
- * * _printf - printf clone
+ *  *  _putchar - Takes in char c and outputs to stdout
  *
- * * @format: format to be printed
+ *   *  @c: Character c to output to stdout
  *
- * * Return: return pointer to index
+ *    *
  *
- * */
+ *     *  Return: Always 0 (Success)
+ *
+ *      *
+ *
+ *       */
 
-int _printf(const char *format, ...)
 
+
+int _putchar(char c)
+	
 {
 
-		int count;
-
-			va_list v;
-
-				format_t options[] = {
-
-							{"c", put_char},
-
-									{"s", put_string},
-
-											{"%", put_percent},
-
-													{"d", put_decimal},
-
-															{"i", put_decimal},
-
-																	{NULL, NULL}
-
-								};
-
-
-
-					if (!format)
-
-							{
-
-										return (-1);
-
-											}
-
-
-
-						va_start(v, format);
-
-							count = formatter(format, options, v);
-
-								va_end(v);
-
-
-
-
-
-									return (count);
+	return (write(1, &c, 1));
 
 }
